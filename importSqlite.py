@@ -1,5 +1,4 @@
 import sqlite3
-import csv
 
 # open sql script and create sqlite3 data base
 with open('create_db.sql') as f:
