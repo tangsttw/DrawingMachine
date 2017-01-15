@@ -1,0 +1,26 @@
+<!-- templates/history.html -->
+{% extends "base.html" %}
+
+{% block title %}History{% endblock title %}
+
+{% block content %}
+<h1>History (Total Records)</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Group</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for history in recent_histories %}
+    <tr>
+      <td>{{ history.0 }}</td>
+      <td>{{ history.1 }}</td>
+      <td>{{ history.2 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- templates/draw.html -->
+{% extends "base.html" %}
+
+{% block title %}All Data {% endblock title %}
+
+{% block content %}
+<h1>Show Data !</h1>
+<p>Select Group Type</p>
+
+<form action = "/showAll" method = "post">
+	<select name="select_group_name">
+		{% for group in groups %}
+		<option value="{{ group }}">{{ group }}</option>
+		{% endfor %}
+	</select>
+	<br>
+	<input type="submit">
+</form>
+{%- for message in get_flashed_messages() %}
+{{ message }}
+{%- endfor %}
+<hr/>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Group_Name</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		{% for member in members %}
+		<tr>
+			<td>{{ member.name }}</td>
+			<td>{{ member.group_name }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<p>Total {{ total }}</p>
+{% endblock content %}

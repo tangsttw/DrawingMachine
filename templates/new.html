@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Add {% endblock title %}
+
+{% block content %}
+<h3>Members - Flask SQLAlchemy example</h3>
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+<div class = "alert alert-danger">
+   {{ message }}
+</div>
+{%- endfor %}
+
+<form action = "{{ request.path }}" method = "post">
+   <label for = "Name">Name</label><br>
+   <input type = "text" name = "name" placeholder = "Name" /><br>
+
+   {% for group in groups %}
+   <input type="radio" name="group_name" value="{{ group }}">{{ group }}
+   {% endfor %}
+   <input type = "submit" value = "Submit" />
+</form>
+{% endblock content %}
+

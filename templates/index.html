@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Come to Draw !</h1>
+<p>Select Group Type</p>
+<form action="/draw" method="post">
+  <label for="group_name">group name</label>
+  <input type="radio" name="group_name" value="General">General
+  <input type="radio" name="group_name" value="Expensive">Expensive
+  <input type="radio" name="group_name" value="Cheap">Cheap
+  <input type="radio" name="group_name" value="Taste">Taste
+  <input type="radio" name="group_name" value="ALL" checked>ALL
+  <input type="submit" value="Submit">
+</form>
+{% endblock content %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Remove {% endblock title %}
+
+{% block content %}
+   <h3>Members - Flask SQLAlchemy example - Remove</h3>
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+	 <form action = "/delete" method = "post">
+		<select name="select_name">
+		{% for food in foodList %}
+			<option value="{{ food }}">{{ food }}</option>
+		{% endfor %}
+		</select>
+			<br>
+		<input type="submit" value = "Submit">
+	</form>
+{% endblock content %}

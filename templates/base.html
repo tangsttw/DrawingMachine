@@ -1,0 +1,21 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+ <title> {% block title %} Draw Member {% endblock title %}</title>
+</head>
+<body>
+  {% block content %}{% endblock content %}
+  <hr>
+  <h3>Tool Bar</h3>
+  <ul>
+    <li><a href="/">First Page (Draw)</li>
+    <li><a href="/history">History</li>
+    <li><a href="/reset">History Clean, Data Update</li>
+    <li><a href="/showAll">Show All Data</li>
+    <li><a href="/new">Add Data</li>
+    <li><a href="/delete">Delete Data</li>
+    <li><a href="/update">Update Data</li>
+  </ul>
+</body>
+</html>
